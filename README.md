@@ -228,6 +228,17 @@ Logging configuration:
 
 ## 🔄 CI/CD Integration
 
+### GitHub Actions (Automated)
+This project includes GitHub Actions workflow that automatically:
+- ✅ Runs on every push to main/master branch
+- ✅ Sets up Java 11 and Maven
+- ✅ Installs Chrome and Firefox browsers
+- ✅ Executes test suite
+- ✅ Uploads test reports and screenshots as artifacts
+- ✅ Generates test summary
+
+**Workflow file:** `.github/workflows/test-automation.yml`
+
 ### Jenkins Pipeline
 ```groovy
 pipeline {
@@ -235,7 +246,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/vidhya-web/opencart-automation-framework.git'
+                git 'https://github.com/vidhyasai92/opencart-automation-framework.git'
             }
         }
         stage('Build') {
@@ -256,6 +267,38 @@ pipeline {
     }
 }
 ```
+
+---
+
+## 🐳 Docker Support
+
+### Run Tests in Docker Container
+
+```bash
+# Build Docker image
+docker build -t opencart-tests .
+
+# Run tests in container
+docker run --rm opencart-tests
+```
+
+### Run with Selenium Grid (Docker Compose)
+
+```bash
+# Start Selenium Grid with Chrome, Firefox, and Edge nodes
+docker-compose up -d
+
+# Check Grid status
+open http://localhost:4444
+
+# Run tests against Grid
+mvn test -Dexecution_env=remote
+
+# Stop Grid
+docker-compose down
+```
+
+**Grid Console:** http://localhost:4444/ui
 
 ---
 
