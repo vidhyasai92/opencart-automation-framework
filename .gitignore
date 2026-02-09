@@ -1,0 +1,48 @@
+# Compiled class files
+/target/
+*.class
+
+# Log files
+*.log
+/logs/
+
+# Test output
+/test-output/
+/surefire-reports/
+
+# Screenshots (optional - remove if you want to commit them)
+/screenshots/
+
+# Reports (optional - remove if you want to commit them)
+/reports/
+
+# Eclipse specific files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA specific files
+.idea/
+*.iml
+*.iws
+
+# Maven specific
+dependency-reduced-pom.xml
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~.nib
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
